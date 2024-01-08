@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="cal.css"> -->
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+
+        .calculator {
+            background-color: rgb(44, 45, 46);
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        .calculator form input {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            background: transparent;
+            font-size: 20px;
+            margin: 5px;
+            cursor: pointer;
+            box-shadow: -5px -6px 15px black;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+        }
+
+        form .display1 {
+            display: flex;
+            justify-content: flex-end;
+            text-align: right;
+        }
+
+        form .display1 input {
+            text-align: right;
+            flex: 1;
+            font-size: 30px;
+            padding-right: 10px;
+        }
+
+        .calculator form input.equal {
+            width: 45%;
+        }
+
+        form input.operator {
+            color: #33ffd8;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+            <form action="#">
+                <div class="display1">
+                    <input type="text" name="display1" id="inputbox" placeholder="0">
+                </div>
+                <div>
+                    <input type="button" value="Ac" class="operator" onclick="clearN()" >
+                    <input type="button" value="DE" class="operator" onclick="del()">
+                    <input type="button" value="." class="operator" onclick="display('.')">
+                    <input type="button" value="/" class="operator" onclick="display('/')">
+                </div>
+                <div>
+                    <input type="button" value="7" onclick="display('7')">
+                    <input type="button" value="8" onclick="display('8')">
+                    <input type="button" value="9" onclick="display('9')">
+                    <input type="button" value="*" class="operator" onclick="display('*')">
+                </div>
+                <div>
+                    <input type="button" value="4" onclick="display('4')">
+                    <input type="button" value="5" onclick="display('5')">
+                    <input type="button" value="6" onclick="display('6')">
+                    <input type="button" value="-" class="operator" onclick="display('-')">
+                </div>
+                <div>
+                    <input type="button" value="1" onclick="display('1')">
+                    <input type="button" value="2" onclick="display('2')">
+                    <input type="button" value="3" onclick="display('3')">
+                    <input type="button" value="+" class="operator" onclick="display('+')">
+                </div>
+                <div>
+                    <input type="button" value="00" onclick="display('00')">
+                    <input type="button" value="0" onclick="display('0')">
+                    <input type="button" value="=" class="equal operator" onclick="cal('=')">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+       
+    </script>
+    <script src="cal.js">
+
+    </script>
+    <!-- <script>
+        function clear() {
+            document.getElementById("inputbox").value = '';
+        }
+        
+        function del() {
+            var currentValue = document.getElementById('inputbox').value;
+            document.getElementById('inputbox').value = currentValue.slice(0, -1);
+        }
+
+        function display(val) {
+            document.getElementById('inputbox').value += val;
+        }
+
+        function cal() {
+            var result = eval(document.getElementById('inputbox').value);
+            document.getElementById('inputbox').value = result;
+        }
+
+    </script> -->
+
+
+</body>
+
+</html>

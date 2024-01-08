@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="second"></div> -->
+    <script>
+        // var now = new Date()
+        // console.log(now);
+        // setInterval(()=>{
+        //     let now = new Date()
+        //     let min = now.getMinutes()
+        //     let sec= now.getSeconds()
+        //     document.getElementById('second').innerText = min +':' + sec
+        // },1000)
+        // 0
+
+
+        let now = new Date()
+let year = now.getFullYear()
+let month = (now.getMonth()+ 1).toString().padStart(2, '0');
+console.log(month);
+// let hour = now.getHours()
+// let day = now.getDay()
+let date = now.getDate().toString().padStart(2, '0')
+console.log(date);
+let minutes = now.getMinutes()
+// console.log(now.getTime());
+//  i) YYYY-MM-DD HH:mm
+console.log(`${year}-${month}-${date}  `);
+    </script>
+</body>
+</html>

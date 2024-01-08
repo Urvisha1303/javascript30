@@ -195,30 +195,37 @@ else{
 // console.log(`You lived ${second} seconds.`)
 
 // 15.Create a human readable time format using the Date time object
-let now = new Date()
-let year = now.getFullYear()
-let month = now.getMonth() + 1;
-let hour = now.getHours()
-let day = now.getDay()
-let date = now.getDate()
-let minutes = now.getMinutes()
-console.log(now.getTime());
+// let now = new Date()
+// let year = now.getFullYear()
+// let month = now.getMonth() + 1;
+// let hour = now.getHours()
+// let day = now.getDay()
+// let date = now.getDate()
+// let minutes = now.getMinutes()
+// console.log(now.getTime());
 //  i) YYYY-MM-DD HH:mm
-console.log(`${year}-${month}-${date}  ${hour}:${minutes}`);
+// console.log(`${year}-${month}-${date}  ${hour}:${minutes}`);
 
 // ii)DD-MM-YYYY HH:mm
-console.log(`${date}-${month}-${year}  ${hour}:${minutes}`);
+// console.log(`${date}-${month}-${year}  ${hour}:${minutes}`);
 
 // iii)DD/MM/YYYY HH:mm
-console.log(`${date}/${month}/${year}  ${hour}:${minutes}`);
+// console.log(`${date}/${month}/${year}  ${hour}:${minutes}`);
 
 // Exercises: Level 3
 // Create a human readable time format using the Date time object. The hour and the minute should be all the time two digits(7 hours should be 07 and 5 minutes should be 05 ) 
 //i) YYY-MM-DD HH:mm eg. 20120-01-02 07:05
 
+let now = new Date()
+let year = now.getFullYear()
+let month = (now.getMonth() + 1).toString().padStart(2, '0');
+let hour = now.getHours().toString().padStart(2, '0')
+let day = now.getDay().toString().padStart(2, '0')
+let date = now.getDate().toString().padStart(2, '0')
+let minutes = now.getMinutes().toString().padStart(2, '0')
+console.log(now.getTime());
 
-
-
+console.log(`${year}-${month}-${date}  ${hour}:${minutes}`);
 
 
 

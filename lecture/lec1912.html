@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //         let arr= []
+        //         let a = ['aab', 'caaaa', 'a', 'bbb'];
+        //         for(let i=0; i<a.length; i++){
+        //             // console.log(a[i]);
+        //             let data= a[i].split('')
+        //             // console.log(data);
+        // let sum = 0
+        //             for(let j=0; j< a[i].length; j++){
+        //                 console.log(data[j]);
+        //                 if(data[j] === "a"){
+        //                     sum += 1
+        //                 }
+        //             }
+        //             arr[i]= sum
+        //         }
+        //         console.log(arr);
+        // 
+        // 
+        // 
+        // 
+
+
+        // let a = ['bhavesh', "ramesh", 'hitesh', 'jignesh']
+
+        // without using any method
+
+        // 
+        // 
+        // 
+
+        //1 let b = []
+        // a.forEach(element=>{
+        //     b.unshift(element)
+
+        // })
+        // console.log(b);
+
+        // function reversearray(arr){
+        //     let b= []
+        // for (let i=0; i< b.length - 1; i--){
+        //     b.push(arr[i])
+        // }
+        // return b
+        // }
+        // reversearray(a)
+
+        // let b = a.length
+        // let arr = []
+        // for (let i = 0; i < b; i++) {
+        //     data = a.pop()
+        //     arr[i] = data
+
+        // }
+        // console.log(arr);
+
+        let a = ['bhavesh', 'ramesh', 'hitesh', 'jignesh'];
+    
+        function reversearray(arr){
+            let start = 0
+            let end = arr.length- 1;
+            while(start < end){
+                let a= arr[start]
+                arr[start] = arr[end]
+                arr[end] = a
+                start++;
+                end--;
+            }
+        }reversearray(a)
+        console.log(a);
+
+
+
+</script>
+</body>
+
+</html>

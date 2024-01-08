@@ -161,7 +161,7 @@ console.log(shoppingCart);
 console.log(shoppingCart[shoppingCart.indexOf('Tea')]= "GreenTea");
 console.log(shoppingCart);
 
-// 3.In countries array check if 'Ethiopia' exists in the array if it exists print 'ETHIOPIA'. If it does not exist add to the countries list.
+// *4.In countries array check if 'Ethiopia' exists in the array if it exists print 'ETHIOPIA'. If it does not exist add to the countries list.
 
 if (countries.indexOf('Ethiopia')){
   console.log('ETHIOPIA');
@@ -170,5 +170,51 @@ if (countries.indexOf('Ethiopia')){
   console.log(countries);
 }
 
+//* 5.In the webTechs array check if Sass exists in the array and if it exists print 'Sass is a CSS preprocess'. If it does not exist add Sass to the array and print the array.
+const webTechs1 = [
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'React',
+  'Redux',
+  'Node',
+  'MongoDB',
+  
+]
 
+if(webTechs1.includes('Sass')){
+   console.log('Sass is a CSS preprocess');
+}else{
+  webTechs1.push('Sass')
+  console.log(webTechs1);
+}
+
+
+// 6.Concatenate the following two variables and store it in a fullStack variable.
+const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+const backEnd = ['Node','Express', 'MongoDB']
+const fullstack = frontEnd.concat(backEnd)
+console.log(fullstack);
+
+
+//Exercise: Level 3
+
+// 1.The following is an array of 10 students ages:
+
+const ages = [19, 22, 19, 45, 20, 25, 26, 46, 25, 24]
+
+// i)Sort the array and find the min and max age
+console.log(ages.sort());
+const min = ages[0];
+console.log(min);
+const max = ages[ages.length - 1];
+console.log(max);
+
+// ii)Find the median age(one middle item or two middle items divided by two)
+
+var middle1 = ages[Math.floor((ages.length - 1) / 2)];
+var middle2 = ages[(Math.floor((ages.length - 1) / 2)) +1];
+
+var midAge = (middle1+middle2)/2
+console.log(parseInt(midAge));
 
