@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- DOM: Document object Model -->
+    <h1 id="demo">
+        <p>Hello World </p>
+    </h1>
+    <h1>Element by Tag Name</h1>
+    <p class="demo1">Element by Class Name</p>
+    <p class="demo1">Element by Class</p>
+    <input type="text" id="input" value="5">
+    <script>
+
+        //ID
+        // let head = document.getElementById('demo').innerText  //>Hello World
+        // let head = document.getElementById('demo').innerHTML //<p>Hello World </p> 
+        // console.log(head);
+
+
+        //Tag Name
+        // let head = document.getElementsByTagName('h1')
+        // console.log(head.innerText); //undefined
+        // console.log(head[0].innerText); //hello wowld
+        // console.log(head[1].innerText); //Element by Tag Name
+
+        //class
+        // let head = document.getElementsByClassName('demo1')
+        // console.log(head.innerText);//undefined
+        // console.log(head[0].innerHTML);//Element by Class Name
+        // console.log(head[1].innerText);//Element by Class
+        // head[1].style.color = "blue"
+
+        //value
+        // let head = document.getElementById('input').value
+        // console.log(head);
+
+
+    </script>
+
+</body>
+
+</html>

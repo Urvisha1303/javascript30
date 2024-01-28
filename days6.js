@@ -125,3 +125,5 @@ for(let i = 5; randomarray1.length < i;){
     }
 }
 console.log(randomarray1);
+
+// 15.

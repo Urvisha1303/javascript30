@@ -121,6 +121,7 @@ console.log("The perimeter of the triangle is " + total + ""); */
 // 4.Get radius using prompt and calculate the area of a circle (area = pi x r x r) and circumference of a circle(c = 2 x pi x r) where pi = 3.14.
 /* const r = parseInt(prompt("Enter th value: "))
 console.log(Math.PI * r * r);
+console.log(Math.PI * r * 2);
  */
 
 // 5.Calculate the slope, x-intercept and y-intercept of y = 2x -2

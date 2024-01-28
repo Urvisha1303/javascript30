@@ -87,7 +87,7 @@ console.log(itCompaines.toString());
 //   console.log(`${company} is no exist`);
 // }
 
-// 14.Filter out companies which have more than one 'o' without the filter method
+//**  14.Filter out companies which have more than one 'o' without the filter method
 const itCompaines1 = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
 let ocount = []
 for (let i= 0; i< itCompaines1.length; i++){
@@ -150,7 +150,7 @@ console.log(shoppingCart);
 
 // ii)add Sugar at the end of you shopping cart if it has not been already added
 console.log(shoppingCart.push('sugar'));
-console.log(shoppingCart);
+// console.log(shoppingCart);
 
 // iii)remove 'Honey' if you are allergic to honey
 
@@ -159,7 +159,7 @@ console.log(shoppingCart);
 
 // iv)modify Tea to 'Green Tea'
 console.log(shoppingCart[shoppingCart.indexOf('Tea')]= "GreenTea");
-console.log(shoppingCart);
+// console.log(shoppingCart);
 
 // *4.In countries array check if 'Ethiopia' exists in the array if it exists print 'ETHIOPIA'. If it does not exist add to the countries list.
 
