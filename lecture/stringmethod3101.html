@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var s = ["ass", "bbss", "bf", "ssss"]
+        console.log(s);
+        let arr = []
+        for(let i = 0; i< s.length; i++){
+            // console.log(i);
+            let p = s[i].split('')
+            // console.log(p);
+            let sum = 0
+            for(let j = 0; j< s[i].length; j++){
+                // console.log(j);
+                if(p[j] == 's'){
+                    sum += 1
+                }arr[i] = sum
+            }
+        }console.log(arr);
+
+
+        // ['urvisha', 'nency', 'hemali'] without using reverse method
+
+        let name = ['urvisha', 'nency', 'hemali', 'avani']
+        let l = name.length
+        let barr = []
+        for (let i = 0; i < l; i++) {
+            // console.log(i);
+            data = name.pop()
+            //  console.log(data);
+            barr[i] = data
+        }
+        console.log(barr);
+
+
+        // length
+        let a = "My Name Is Urvisha"
+        console.log(a.length);
+
+        // touppercase tolowercase
+        let b = "My Name is Urvisha"
+        console.log(b.toLocaleUpperCase());
+        console.log(b.toLocaleLowerCase());
+
+        // charAt
+        let c = "urvisha"
+        console.log(c.charAt(5));
+        // console.log(c.charCodeAt(s)); ASCII Number show
+
+
+        // for(let i=0; i<5; i++){
+        //     for(let j=0; j< i+1; j++){
+        //         document.write(j + 1,"&nbsp;&nbsp;");
+        //     }
+        //     document.write("<br>");
+        // }
+
+
+        // for(let i= 0; i<4; i++){
+        //     // console.log("*");
+        //     for(let j= 4; j> i ; j--){
+        //         document.write('*',"&nbsp;&nbsp;")
+        //     }
+        //     document.write("<br>")
+        // }
+
+        // n = 5
+        // let count = 1
+        // for (let i = 0; i < 4; i++) {
+        //     for (let j = 0; j < i + 1; j++) {
+        //         document.write(count,"&nbsp;&nbsp;")
+        //         count++
+        //     }
+        //     document.write("<br>")
+        // }
+
+
+
+
+        // for (let i = 0; i < 4; i++) {
+        //     for (let j = 0; j < i; j++) {
+        //         document.write( "&nbsp;&nbsp;");
+        //     }
+        //     for (let k = 4; k > i ; k--) {
+        //         document.write(' * ',"&nbsp;&nbsp;");
+        //     }
+        //     document.write("<br>");
+        // }
+
+
+        // for(let i = 0; i<4; i++){
+        //     for(let j=4; j>i+1; j--){
+        //         document.write("&nbsp;&nbsp;")
+        //     }
+        //     for(let k=0; k<i+1; k++){
+        //         document.write("*","&nbsp;&nbsp;")
+        //     }
+        //     document.write("<br>")
+        // }
+
+        // for(let i = 0; i<4; i++){
+        //     for(let j= 1; j<4-i; j++){
+        //         document.write("&nbsp;&nbsp;")
+        //     }
+        //     for(let k= 0; k< 2*i + 1; k++){
+
+        //         document.write("*")
+        //     }
+
+        //     document.write("<br>")
+        // }
+
+
+        // for(let i = 0; i < 5; i++){
+        //     for(let j = 0; j < 5-i; j++){
+        //         document.write("&nbsp;&nbsp;")
+        //     }
+        //     for(let k= 0; k < i; k++){
+        //         document.write("* ", "&nbsp;&nbsp;")
+        //     }document.write("<br>")
+        // }
+
+
+        // for(let i = 0; i<5; i++){
+        //     for(let j=0; j< i; j++){
+        //         document.write(String.fromCharCode(j + 65), "&nbsp;&nbsp;")
+        //     }
+        //     document.write("<br>")
+        // }
+
+        // for(let i = 0; i<5; i++){
+        //     for(let j=0; j< i; j++){
+        //         document.write(String.fromCharCode((i-1) + 65), "&nbsp;&nbsp;")
+        //     }
+        //     document.write("<br>")
+        // }
+
+        // let co = 0
+        // for(let i = 0; i<7; i++){
+        //     for(let j=0; j< i; j++){
+        //         document.write(String.fromCharCode( co + 65), "&nbsp;&nbsp;")
+        //         co++
+        //     }
+        //     document.write("<br>")
+        // }
+
+
+        // let cou = 0
+        // for(let i = 0; i < 5; i++){
+        //     for(let j = 0; j < 5-i; j++){
+        //         document.write("&nbsp;&nbsp;")
+        //     }
+        //     for(let k= 0; k < i; k++){
+        //         document.write(String.fromCharCode(cou + 65), "&nbsp;&nbsp;")
+        //         cou++
+        //     }document.write("<br>")
+        // }
+
+
+
+        for (let i = 0; i < 5; i++) {
+            // console.log("*");
+            for (let j = 0; j < i; j++) {
+                document.write(j+1)
+            }
+            document.write("<br>")
+        }
+        for (let i = 0; i < 5 ; i++) {
+            for (let j = 5; j > i + 1; j--) {
+                document.write(j +1)
+            }
+            document.write("<br>")
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
