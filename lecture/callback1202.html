@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- what is callback function?
+    call function inside otherfunction its called callback -->
+
+    <!-- Asynchronous : one function call is not finish other function run
+    synchronous : all function one time -->
+    <!-- First Method -->
+    <!-- <script>
+        const sum = (a,b,c) =>{
+            return c(a+b, 5)
+        }
+        const multi = (a,b) =>{
+            return a*b
+        } 
+
+        let val = sum(2,5,multi)
+        console.log(val);
+    </script> -->
+
+    <!-- Second Method -->
+    <!-- <script>
+        const sum =(a,b)=>{
+            return new Promise((resolve, reject)=>{
+                resolve(a+b)
+            })
+        }
+
+        const multi =(a,b)=>{
+            return new Promise((resolve, reject)=>{
+                resolve(a*b)
+            })
+        }
+
+        sum(2,3).then((result)=>{
+            return multi(result,4)
+        }).then((ans)=> {
+            console.log(ans)
+        })
+    </script> -->
+
+    <!-- Third Method -->
+    <!-- async.. await -->
+    <script>
+        const sum = async(a,b)=>{
+            let c = await multi(a+b, 5)
+            console.log(c);
+
+        }
+        const multi = (a,b)=>{
+            return a*b
+        }
+
+        sum(5,6)
+
+    </script>
+</body>
+</html>

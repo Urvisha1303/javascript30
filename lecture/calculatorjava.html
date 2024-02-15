@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Math</th>
+                <th>Sci</th>
+                <th>Eng</th>
+                <th>Total</th>
+                <th>Per(%)</th>
+            </tr>
+        <tbody id="table_body"></tbody>
+        </thead>
+
+    </table>
+    <button onclick="addstudentrow()">Add Student</button>
+
+    <script>
+        let index = 0;
+        function addstudentrow() {
+            index++;
+            let tableBody = document.getElementById('table_body')
+            console.log(tableBody);
+            let rowtable = document.createElement('tr')
+            console.log(rowtable);
+
+            for (let i = 0; i < 7; i++) {
+                let newcolumn = document.createElement('td')
+                rowtable.append(newcolumn)
+            }
+
+            let number = tableBody.rows.length + 1
+            rowtable.cells[0].textContent = number
+
+            rowtable.cells[1].textContent = prompt('Enter Your Name')
+
+            let mathscrore = document.createElement('input')
+            mathscrore.setAttribute("type","number")
+            mathscrore.setAttribute("id", "math" + index) //math1
+            mathscrore.addEventListener("change", cal_m)
+            rowtable.cells[2].append(mathscrore)
+            console.log(mathscrore);
+
+
+            let sciscrore = document.createElement('input')
+            sciscrore.setAttribute("type","number")
+            sciscrore.setAttribute("id", "sci" + index) //sci1
+            sciscrore.addEventListener("change", cal_m)
+            rowtable.cells[3].append(sciscrore)
+            console.log(sciscrore);
+
+            let engscrore = document.createElement('input')
+            engscrore.setAttribute("type","number")
+            engscrore.setAttribute("id","eng" + index) //eng1
+            engscrore.addEventListener("change", cal_m)
+            rowtable.cells[4].append(engscrore)
+            console.log(engscrore);
+
+
+            let totalscore = document.createElement('td')
+            totalscore.setAttribute("id", "total" + index)
+            // let totalscore = mathscrore + sciscrore + engscrore
+            rowtable.cells[5].append(totalscore)
+
+            let percentageScore = document.createElement('td')
+            percentageScore.setAttribute('id', "per" + index)
+            // let per = parseFloat((totalscore / 300)*100)
+            console.log(rowtable.cells[6])
+            rowtable.cells[6].append(percentageScore)
+            tableBody.append(rowtable)
+
+
+        }
+
+
+        function cal_m(e) {
+            console.log(e.target.id);
+            let id = e.target.id; //math1
+            let index = id.replace(/[^0-9]/g, ""); 
+            console.log("INDEX", index);
+            let math_m = document.getElementById('math' + index).value || 0
+            let sci_s = document.getElementById('sci' + index).value || 0
+            let eng_e = document.getElementById('eng' + index).valur || 0
+            console.log("M", math_m)
+            console.log("S", sci_s)
+            let total = Number(math_m) + Number(sci_s)
+
+            document.getElementById('total' + index).textContent = total
+            document.getElementById('per' + index).innerText = (total / 200) * 100 
+
+            
+        }
+        
+// let mathscrore = parseFloat(prompt("Enter Math Score"))
+// if(isNaN(mathscrore)){
+//     rowtable.cells[2].innerHTML = 0
+// }else{
+    
+// }
+
+// let sciscrore = parseFloat(prompt("Enter Sci Score"))
+// if(isNaN(sciscrore)){
+//     rowtable.cells[3].innerHTML = 0
+// }else{
+//     rowtable.cells[3].innerHTML = sciscrore
+// }
+
+// let engscrore = parseFloat(prompt("Enter Eng Score"))
+// if(isNaN(engscrore)){
+//     rowtable.cells[4].innerHTML = 0
+// }else{
+//     rowtable.cells[4].innerHTML = engscrore
+// }
+
+    </script>
+</body>
+
+</html>
+
+
+
+

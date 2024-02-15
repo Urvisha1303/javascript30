@@ -1,0 +1,61 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, th, td{
+            border:  1px solid black;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Math</th>
+                <th>Science</th>
+                <th>Total</th>
+                <th>Per(%)</td>
+            </tr>
+        </thead>
+        <tr>
+            <td>1</td>
+            <td>Urvisha</td>
+            <td><input type="number" name="" id="math" onchange="cal_m()"></td>
+            <td><input type="number" name="" id="sci" onchange="cal_m()"></td>
+            <td><b id="total"></b></td>
+            <td><b id="per"></b></td>
+            
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Nency</td>
+            <td><input type="number" name="" id="math" onchange="cal_m"></td>
+            <td><input type="number" name="" id="sci" onchange="cal_m"></td>
+            <td><b id="total"></b></td>
+            <td><b id="per"></b></td>
+            
+        </tr>
+    </table>
+    <script>
+        function cal_m() {
+            let math_m = document.getElementById('math').value
+            let sci_s = document.getElementById('sci').value
+            let total = Number(math_m) + Number(sci_s)
+
+            document.getElementById('total').innerText = total
+            document.getElementById('per').innerText = (total / 200) * 100
+
+            
+        }
+    </script>
+    
+</body>
+</html> 

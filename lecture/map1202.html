@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let std = [{name: "urvisha", age: 26, marks: 90}, 
+            {name: "urvi", age: 25, marks: 70}, {
+            name: "hemagi", age: 26, marks: 80
+        }]
+
+        let newstd = std.map((result) => {
+            if (result.name == 'urvisha') {
+                return {
+                    name: result.name + ' bambhroliya', age: result.age, marks: result.marks
+                }
+            }
+            else {
+                return result
+            }
+        })
+
+        console.log(newstd);
+    </script>
+</body>
+
+</html>
