@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="onElement()">Click on</button>
+    <div id="boc"></div>
+    <script>
+
+        // for(let i = 0; i<=5; i++){
+        //     for(let j=0; j<i; j++ ){
+        //         document.write("*");
+
+        //     }
+        //     document.write("<br>");
+           
+        // }
+
+        let i = 0
+        function onElement(){
+            let add=  document.createElement('button')
+            let newbuttom =document.createElement('div')
+            add.innerText =i 
+            newbuttom.append(add)
+            document.getElementById('boc').append(newbuttom)
+            i++
+        }
+        
+        onElement()
+
+
+
+    </script>
+</body>
+</html>

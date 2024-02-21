@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    // functions with the same name and different operations.
+<script>
+     class A {
+        constructor() {}
+        a() {
+          console.log('this is a')
+        }
+      }
+
+      class B extends A {
+        constructor() {
+          super()
+        }
+
+        a() {
+          super.a()
+          console.log('this is b')
+        }
+      }
+
+      let obj = new B()
+      obj.a()
+</script>
+</body>
+</html>

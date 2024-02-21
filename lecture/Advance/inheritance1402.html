@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // single inheritance
+        class sum{
+            constructor(a,b){
+                this.num1 = a
+                this.num2 = b
+            }
+            add(){
+                console.log(this.num1 + this.num2);
+            }
+        }
+
+        let m = new sum(5,3)
+        m.add()
+
+
+        // multi inheritance
+
+        class multi{
+            constructor(a,b){
+                this.num3 = a
+                this.num4 = b
+            }
+
+            multi(){
+                console.log(this.num3 * this.num4);
+            }
+        }
+
+        class div extends multi{
+            constructor(a,b){
+                super(a,b)
+                this.n1 = a
+                this.n2 = b
+            }
+
+            div(){
+                console.log(this.n1 / this.n2);
+            }
+
+        }
+
+        let m1 = new div(10,2)
+        m1.multi()
+        m1.div()
+
+
+
+    </script>
+</body>
+</html>

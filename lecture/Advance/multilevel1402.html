@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class sum{
+            constructor(a,b){
+                this.n1 = a
+                this.n2 = b
+            }
+            add(){
+                console.log(this.n1 + this.n2);
+            }
+        }
+
+        class multi extends sum{ 
+            constructor(a,b){
+                super(a,b)
+                this.num1 = a
+                this.num2 = b
+            }
+            
+            multi(){
+                console.log(this.num1 * this.num2);
+            }
+        }
+
+        class divided extends multi{
+            constructor(a,b){
+                super(a,b)
+                this.x = a
+                this.y = b
+            }
+            divided(){
+                console.log(this.x / this.y);
+            }
+        }
+
+        let m = new divided(10, 2)
+        m.add()
+        m.multi()
+        m.divided()
+
+    </script>
+</body>
+</html>
