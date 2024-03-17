@@ -1,55 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        h1 {
-            text-align: center;
-        }
+      h1 {
+        text-align: center;
+      }
 
-        .box {
-            border: 1px solid #9E9E9E;
-            width: 600px;
-            height: 110px;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap;
-            border-radius: 6px;
-            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-            margin-bottom: 20px;
-            margin-top: 20px;
+      .box {
+        border: 1px solid #9e9e9e;
+        width: 600px;
+        height: 110px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 6px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
 
-        }
+      img {
+        width: 55px;
+        margin: auto;
+      }
 
-        img {
-            width: 55px;
-            margin: auto;
-        }
+      h4 {
+        width: 320px;
+        display: flex;
+        align-items: center;
+        font-family: sans-serif;
+      }
 
-        h4 {
-            width: 320px;
-            display: flex;
-            align-items: center;
-            font-family: sans-serif;
-        }
+      p {
+        width: 75px;
+        margin: auto;
+        font-weight: bold;
+      }
 
-        p {
-            width: 75px;
-            margin: auto;
-            font-weight: bold;
-        }
-
-        .buttonicon {
-            margin-right: 10px;
-        }
+      .buttonicon {
+        margin-right: 10px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>All Shirts</h1>
+    <div id="buttons"></div>
+    <div id="products"></div>
     <!-- <div class="box">
     <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="">
         <h4>Faux Leather Jacket</h4>
@@ -57,81 +58,78 @@
     </div> -->
 
     <script>
-        const buttonLabels = ["All", "Men's Clothing", "Women's Clothing", "Electronics", "jewelery"];
+      let buttonLabels = [];
+      let productData = [];
 
-        buttonLabels.forEach(label => {
-            let button = document.createElement('button')
-            button.className = "buttonicon"
-            button.textContent = label;
-           
-
-            button.addEventListener("click", () => {
-                fetchdetils(label)
-
-            })
-            document.body.append(button)
-            console.log(button);
+      fetch("https://fakestoreapi.com/products")
+        .then((result) => {
+          return result.json();
         })
+        .then((result) => {
+          productData = result;
+          buttonLabels = result.map((product) => {
+            return product.category;
+          });
+          buttonLabels = new Set(buttonLabels);
+          console.log(buttonLabels);
 
-function fetchdetils(){
+          createButton("All");
 
-
-        fetch("https://fakestoreapi.com/products")
-            .then((result) => {
-                return result.json()
-
-            })
-            .then((result) => {
-                console.log(result);
-                const filterResult = result.filter((product) => {
-                    if (product.category === "men's clothing") {
-                        return true
-                    } else {
-                        return false
-                    }
-                    // console.log(catagroy.category);
-                })
-                console.log(filterResult);
-                filterResult.map((product) => {
-                    let h1 = document.createElement('h1')
-                    h1.textContent = "All Shirts"
-                    let div = document.createElement('div')
-                    div.className = 'box'
-                    console.log(div);
-                    let img = document.createElement('img')
-                    img.setAttribute("src", product.image)
-                    console.log(img);
-                    let h4 = document.createElement('h4')
-                    h4.textContent = product.title
-                    console.log(h4);
-                    let p = document.createElement('p')
-                    p.textContent = `$${product.price}`
-                    console.log(p);
-
-                    document.body.append(div)
-                    div.append(img)
-                    div.append(h4)
-                    div.append(p)
-                })
-
-
-            })
-            .catch((error) => {
-                console.log(error);
-
-            })
-
-
-
-        }
-
-        const no = [1,2,3,4,5,9,6,7,8,9,4]
-        const result= no.filter((value)=>{
-            return value > 5
+          for (const item of buttonLabels) {
+            createButton(item);
+          }
         })
+        .catch((error) => {
+          console.log(error);
+        });
 
-        console.log(result);
+
+      function createButton(label) {
+        let button = document.createElement("button");
+        button.className = "buttonicon";
+        button.textContent = label;
+
+        button.addEventListener("click", () => {
+          fetchdetils(label);
+        });
+        document.getElementById("buttons").append(button);
+        console.log(button);
+      }
+
+
+      function fetchdetils(label) {
+        document.getElementById("products").innerHTML = "";
+        const filterResult = productData.filter((product) => {
+          if (label === "All" || product.category === label.toLowerCase()) {
+            return true;
+          } else {
+            return false;
+          }
+          // console.log(catagroy.category);
+        });
+        console.log(filterResult);
+        filterResult.map((product) => {
+          let h1 = document.createElement("h1");
+          h1.textContent = "All Shirts";
+          let div = document.createElement("div");
+          div.className = "box";
+          console.log(div);
+          let img = document.createElement("img");
+          img.setAttribute("src", product.image);
+          console.log(img);
+          let h4 = document.createElement("h4");
+          h4.textContent = product.title;
+          console.log(h4);
+          let p = document.createElement("p");
+          p.textContent = `$${product.price}`;
+          console.log(p);
+
+          document.getElementById("products").append(div);
+          div.append(img);
+          div.append(h4);
+          div.append(p);
+        });
+      }
     </script>
-</body>
-
+  </body>
 </html>

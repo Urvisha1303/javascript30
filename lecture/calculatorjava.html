@@ -101,10 +101,11 @@
             let eng_e = document.getElementById('eng' + index).valur || 0
             console.log("M", math_m)
             console.log("S", sci_s)
-            let total = Number(math_m) + Number(sci_s)
+            console.log("E", eng_e);
+            let total = Number(math_m) + Number(sci_s) + Number(eng_e)
 
             document.getElementById('total' + index).textContent = total
-            document.getElementById('per' + index).innerText = (total / 200) * 100 
+            document.getElementById('per' + index).innerText = (total / 300) * 100 
 
             
         }
