@@ -94,29 +94,29 @@
         let todo = []
         const AddData = () => {
             let add = document.getElementById('data').value
-            // console.log("ADD", add)
+            console.log("ADD", add)
             todo.push(add)
-            document.getElementById('data').value = ''
-            // console.log(todo)
+            // document.getElementById('data').value = ''
+            console.log(todo)
             displaydata(todo)
 
         }
 
         const displaydata = (todo) => {
-            document.getElementById('table').innerHTML = ''
+        //     document.getElementById('table').innerHTML = ''
             console.log("TODO", todo)
-            todo.forEach((value, index) => {
-                let tr = document.createElement('tr')
-                let th = document.createElement('th')
+        //     todo.forEach((value, index) => {
+        //         let tr = document.createElement('tr')
+        //         let th = document.createElement('th')
                
-                console.log("VALUE", value)
-                th.innerText = value
-                tr.append(th);
-                // console.log(document.getElementsByTagName('table'))
-                document.getElementById('table').append(tr)
+        //         console.log("VALUE", value)
+        //         th.innerText = value
+        //         tr.append(th);
+        //         // console.log(document.getElementsByTagName('table'))
+        //         document.getElementById('table').append(tr)
                
 
-            });
+        //     });
         }
 
     </script>
